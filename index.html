@@ -14,35 +14,42 @@
 	
 </head>
 <body>
-	<div id="banner">
-		<div class="leftArrow"></div>						
-		<div id="root"></div>	
-		<div class="rightArrow"></div>
-	</div>
-	 
+	
+	<div id="root"></div>	 
+	
 	<script type="text/babel">
 	
 
-class App extends React.Component {
-   constructor(props) {
-      super(props);
-		
-      this.state = {
-         header: "Header from state...",
-         content: "Content from state..."
-      }
-   }
-   render() {
-      return (
-         <div>
-            <h1>{this.state.header}</h1>
-            <h2>{this.state.content}</h2>
-         </div>
-      );
-   }
-}
+//Avatar component
+const Avatar = () => <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQehMEesk3B5y51u56lDRipQE_xeK6nYfwfWz7uvpyci0n8BkaAIg"/>;
 
-	ReactDOM.render(<App />, document.getElementById('root'));
+//Username component
+const UserName = () => <h4>@emiliosmoreno</h4>;
+
+//Bio component
+const Bio = () =>
+    <p >
+	<div id="bio">
+      <strong>Profile: </strong><br/><br/>
+      Full-stack Analyst<br/>
+	  Born to Gran Canaria, Canary Islands<br/>
+	</div>
+    </p>;
+
+// UserProfile component   
+const UserProfile = () =>
+    <div id="banner">
+      <Avatar/>
+      <UserName/>
+      <Bio/>
+    </div>;
+
+ReactDOM.render(
+    <UserProfile/>,
+    document.getElementById('root')
+);
+
+	 
     
     </script>
 </body>
